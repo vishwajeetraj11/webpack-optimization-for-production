@@ -1,0 +1,24 @@
+{
+  "name": "webpack-optimization-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vp-online-courses/webpack-optimization-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vp-online-courses/webpack-optimization-starter/issues"
+  },
+  "homepage": "https://github.com/vp-online-courses/webpack-optimization-starter#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
