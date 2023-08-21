@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
@@ -24,7 +25,13 @@ const config = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/template.html'
-        })
+        }),
+        // new CleanWebpackPlugin({
+        //     cleanOnceBeforeBuildPatterns: [
+        //         '**/*',
+        //         path.join(process.cwd(), 'dist/**/*')
+        //     ]
+        // })
     ]
 }
 
