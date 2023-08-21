@@ -5,8 +5,16 @@ const config = {
     entry: path.resolve(__dirname, '../src/js/index.js'),
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'main.js'
+        filename: 'main.js',
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            }
+        ]
+    }
 }
 
 module.exports = config 
