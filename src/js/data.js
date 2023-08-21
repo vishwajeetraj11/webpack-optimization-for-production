@@ -1,24 +1,26 @@
 import initialTodos from '../todos.json'
 
+let data = initialTodos
+
 export function getAllTodos() {
-    return initialTodos
+    return data
 }
 
 export function addTodo(todo) {
-    initialTodos.push(todo)
+    data.push(todo)
 }
 
 export function removeTodo(id) {
-    initialTodos = initialTodos.filter(function (item) {
+    data = data.filter(function (item) {
         return item.id !== id
     })
 }
 
 export function updateTodo(id, completed) {
-    const itemIndex = initialTodos.findIndex(function (value) {
+    const itemIndex = data.findIndex(function (value) {
         return value.id === id
     })
-    initialTodos[itemIndex].completed = completed
+    data[itemIndex].completed = completed
 }
 
 

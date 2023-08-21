@@ -12,7 +12,23 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.css$/i,
+                exclude: /\.module\.css$/,
                 use: [MiniCSSExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.css$/,
+                include: /\.module\.css$/,
+                use: [
+                    MiniCSSExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: "[hash:64]"
+                            },
+                        }
+                    }
+                ]
             }
         ]
     },
