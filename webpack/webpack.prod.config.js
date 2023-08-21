@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = merge(common, {
     mode: 'production',
     output: {
-        filename: '[name].[contenthash:12].js',
+        filename: 'js/[name].[contenthash:12].js',
     },
     module: {
         rules: [
@@ -18,7 +18,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new MiniCSSExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: 'css/[name].[contenthash].css'
         })
     ]
 })
