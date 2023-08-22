@@ -1,5 +1,6 @@
 import { onLoadEventHandler, newTodoEventHandler, removeTodoEventHandler, toggleTodoEventListener } from './event-handlers'
-import '../style/index.css'
+// import '../style/index.css'
+import '../style/index.less'
 
 window.addEventListener('load', onLoadEventHandler)
 document.addEventListener('change', function (event) {

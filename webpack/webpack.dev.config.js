@@ -42,6 +42,11 @@ module.exports = merge(common, {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.less$/i,
+                exclude: /\.module\.less$/,
+                use: ['style-loader', , 'css-loader', 'less-loader'],
             }
         ]
     }
