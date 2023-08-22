@@ -49,8 +49,11 @@ module.exports = merge(common, {
             },
             {
                 test: /\.less$/i,
-                exclude: /\.module\.less$/,
                 use: [MiniCSSExtractPlugin.loader, 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.scss$/i,
+                use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
             }
         ]
     },
