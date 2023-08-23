@@ -51,6 +51,18 @@ module.exports = merge(common, {
             {
                 test: /\.scss$/i,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024 // 10kb
+                    }
+                },
+                generator: {
+                    filename: './images/[name][ext]'
+                }
             }
         ]
     }
