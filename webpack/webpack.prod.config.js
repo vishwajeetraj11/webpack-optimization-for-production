@@ -55,9 +55,17 @@ module.exports = merge(common, {
                                     }
                                 ]
                             }]
-                        ]
+                        ],
                     }
-                }
+                },
+                generator: [{
+                    type: 'asset',
+                    preset: 'webp-custom-name',
+                    implementation: ImageMinimizerWebpackPlugin.imageminGenerate,
+                    options: {
+                        plugins: ['imagemin-webp']
+                    }
+                }]
             }),
         ]
     },

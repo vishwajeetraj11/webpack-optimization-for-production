@@ -2,9 +2,9 @@ export function getMotivationalPictures() {
     return new Promise(resolve => {
         setTimeout(() => {
             const mockedResponse = [
-                'images/tocopy/alreadyEnrolled.png',
-                'images/tocopy/paymenterror.png',
-                'images/tocopy/paymentsuccess.png',
+                'images/tocopy/alreadyEnrolled.webp',
+                'images/tocopy/paymenterror.webp',
+                'images/tocopy/paymentsuccess.webp',
             ];
             resolve(mockedResponse);
         }, 700);
