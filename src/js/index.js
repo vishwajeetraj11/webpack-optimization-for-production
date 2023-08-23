@@ -1,6 +1,7 @@
 import { onLoadEventHandler, newTodoEventHandler, removeTodoEventHandler, toggleTodoEventListener } from './event-handlers'
 // import '../style/index.css'
 // import '../style/index.less'
+import '../style/vendors.scss'
 import '../style/index.scss'
 
 window.addEventListener('load', onLoadEventHandler)
