@@ -20,9 +20,13 @@
   },
   "homepage": "https://github.com/vp-online-courses/webpack-optimization-starter#readme",
   "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
     "autoprefixer": "^10.4.15",
+    "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
+    "core-js": "^3.32.1",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "html-loader": "^4.2.0",
