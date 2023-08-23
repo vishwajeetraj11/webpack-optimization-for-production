@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const config = {
     // if we don't specify the file inside a folder, webpack will assume its index.js
@@ -26,6 +27,13 @@ const config = {
             filename: 'index.html',
             template: 'src/template.html'
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '../images/tocopy/*.*'),
+                }
+            ]
+        })
         // new CleanWebpackPlugin({
         //     cleanOnceBeforeBuildPatterns: [
         //         '**/*',
