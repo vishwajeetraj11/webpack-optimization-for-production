@@ -10,6 +10,9 @@ const config = {
         path: path.resolve(__dirname, '../dist'),
         clean: true
     },
+    resolve: {
+        extensions: ['.js', '.ts']
+    },
     module: {
         rules: [
             {
@@ -21,7 +24,7 @@ const config = {
                 ]
             },
             {
-                test: /\.js$/i,
+                test: /\.(js|ts)$/i,
                 exclude: /node_modules/,
                 use: [
                     {
