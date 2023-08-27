@@ -5,10 +5,13 @@ const webpack = require('webpack')
 
 module.exports = merge(common, {
     mode: 'development',
-    entry: path.resolve(__dirname, '../src/js/index-dev.js'),
+    // UNCMNT: this is for manual dev server setup
+    // entry: path.resolve(__dirname, '../src/js/index-dev.js'),
+    entry: path.resolve(__dirname, '../src/js/index.js'),
     output: {
         filename: 'bundle.js',
-        publicPath: '/static/'
+        // UNCMNT: this is for manual dev server setup
+        // publicPath: '/static/'
     },
     devtool: 'eval-source-map',
     devServer: {
@@ -72,6 +75,7 @@ module.exports = merge(common, {
     },
     // needed for manual dev server setup to run.
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        // UNCMNT: this is for manual dev server setup
+        // new webpack.HotModuleReplacementPlugin(),
     ]
 })

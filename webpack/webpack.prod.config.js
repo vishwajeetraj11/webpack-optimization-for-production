@@ -13,7 +13,8 @@ module.exports = merge(common, {
     entry: path.resolve(__dirname, '../src/js/index.js'),
     output: {
         filename: 'js/[name].[contenthash:12].js',
-        publicPath: '/static/'
+        // UNCMNT: this is for manual dev server setup
+        // publicPath: '/'
     },
     optimization: {
         minimize: true,

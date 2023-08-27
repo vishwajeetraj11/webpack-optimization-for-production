@@ -4,9 +4,10 @@ import { onLoadEventHandler, newTodoEventHandler, removeTodoEventHandler, toggle
 import '../style/vendors.scss'
 import '../style/index.scss'
 
-export function renderApp() {
-    onLoadEventHandler()
-}
+// UNCMNT: this is for manual dev server setup
+// export function renderApp() {
+//     onLoadEventHandler()
+// }
 
 window.addEventListener('load', onLoadEventHandler)
 
