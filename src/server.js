@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 });
 
 // app.use('/static', express.static(path.resolve(__dirname, '../dist')))
-app.use('/static', expressStaticGzip(path.resolve(__dirname, '../dist')))
+app.use('/static', expressStaticGzip(path.resolve(__dirname, '../dist'), { enableBrotli: true, orderPreference: ['br', 'gz'] }))
 
 app.listen(3000, function () {
     console.log('Application is running on http://localhost:3000/')

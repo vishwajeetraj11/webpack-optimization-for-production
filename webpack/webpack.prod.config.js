@@ -227,6 +227,15 @@ module.exports = merge(common, {
         new CompressionPlugin({
             algorithm: 'gzip',
             test: /\.(js|css)$/,
+            filename: '[path][base].gz',
+        }),
+        new CompressionPlugin({
+            algorithm: 'brotliCompress',
+            test: /\.(js|css)$/,
+            filename: '[path][base].br',
+            compressionOptions: {
+                level: 11,
+            }
         })
     ]
 })
