@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')
 const glob = require('glob');
 const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'production',
@@ -222,6 +223,10 @@ module.exports = merge(common, {
                 `${path.join(__dirname, '../src')}/**/*`,
                 { nodir: true }
             )
+        }),
+        new CompressionPlugin({
+            algorithm: 'gzip',
+            test: /\.(js|css)$/,
         })
     ]
 })

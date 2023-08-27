@@ -2,6 +2,7 @@ const express = require('express');
 const app = express()
 const path = require('path')
 console.log({ mode: process.env.NODE_ENV })
+const expressStaticGzip = require('express-static-gzip')
 
 // How webpack works behind the scenes.
 if (process.env.NODE_ENV === 'dev') {
@@ -22,7 +23,8 @@ app.get('/', function (req, res) {
     res.sendFile(absolutePathToHtmlFile)
 });
 
-app.use('/static', express.static(path.resolve(__dirname, '../dist')))
+// app.use('/static', express.static(path.resolve(__dirname, '../dist')))
+app.use('/static', expressStaticGzip(path.resolve(__dirname, '../dist')))
 
 app.listen(3000, function () {
     console.log('Application is running on http://localhost:3000/')
