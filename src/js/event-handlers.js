@@ -25,6 +25,9 @@ export function removeTodoEventHandler(event) {
     const id = getTodoId(event.target)
     removeTodo(id)
     renderTodos(getAllTodos())
+    import('bootstrap'/* webpackChunkName: "bootstrap" */).then(function ({ Modal }) {
+        console.log('modal loaded.')
+    })
 }
 
 export function toggleTodoEventListener(event) {

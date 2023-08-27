@@ -23,11 +23,12 @@ const jssStyles = {
 const { classes } = jss.createStyleSheet(jssStyles).attach();
 
 export async function renderTodos(todos) {
-    const [{ Modal }, { default: $ }] = await Promise.all([
-        import(
-            'bootstrap'
-            /* webpackChunkName: "bootstrap" */
-        ),
+    // const [{ Modal }, { default: $ }] = await Promise.all([
+    //     import(
+    //         'bootstrap'
+    //         /* webpackChunkName: "bootstrap" */
+    //     ),
+    const [{ default: $ }] = await Promise.all([
         import(
             'jquery'
             /* webpackChunkName: "jquery" */

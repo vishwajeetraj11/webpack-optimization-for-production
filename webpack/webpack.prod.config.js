@@ -116,24 +116,35 @@ module.exports = merge(common, {
             // }
             // Custom Logic
             chunks: 'all',
-            maxSize: 5000,
-            minSize: 1000,
+            maxSize: Infinity,
+            minSize: 2000,
             cacheGroups: {
                 jquery: {
                     test: /[\\/]node_modules[\\/]jquery[\\/]/,
                     name: 'jquery',
+                    priority: 2,
                 },
-                bootstrap: {
-                    test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
-                    name: 'bootstrap',
-                },
+                // bootstrap will be handled asynchronously
+                // bootstrap: {
+                //     test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
+                //     name: 'bootstrap',
+                // },
                 lodash: {
                     test: /[\\/]node_modules[\\/]lodash-es[\\/]/,
                     name: 'lodash',
+                    priority: 2,
                 },
                 node_modules: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'node_modules',
+                    chunks: 'initial'
+                },
+                async: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'async',
+                    name(module, chunks, cacheGroupKey) {
+                        return chunks.map(chunk => chunk.name).join('-')
+                    }
                 }
             }
         }
