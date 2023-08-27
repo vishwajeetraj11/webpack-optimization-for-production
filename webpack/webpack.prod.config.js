@@ -67,7 +67,76 @@ module.exports = merge(common, {
                     }
                 }]
             }),
-        ]
+        ],
+        runtimeChunk: true,
+        splitChunks: {
+            // Extracting Heavy Dependencies into Separate Bundles.
+            // cacheGroups: {
+            //     jquery: {
+            //         test: /[\\/]node_modules[\\/]jquery[\\/]/,
+            //         name: 'jquery',
+            //         chunks: 'initial',
+            //     },
+            //     bootstrap: {
+            //         test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
+            //         name: 'bootstrap',
+            //         chunks: 'initial',
+            //     }
+            // }
+            // Specifying Criteria For Code Splitting
+            // chunks: 'all',
+            // maxSize: 140000,
+            // minSize: 50000,
+            // name(module, chunks, cacheGroupKey) {
+            //     const filePathAsArray = module.identifier().split('/');
+            //     return filePathAsArray[filePathAsArray.length - 1]
+            // }
+            // Node modules into its own separate dependency bundle
+            // chunks: 'all',
+            // maxSize: Infinity,
+            // minSize: 0,
+            // cacheGroups: {
+            //     node_modules: {
+            //         test: /[\\/]node_modules[\\/]/,
+            //         name: 'node_modules',
+            //     }
+            // }
+            // Creating a JS Bundle For Each Dependency
+            // chunks: 'all',
+            // maxSize: Infinity,
+            // minSize: 0,
+            // cacheGroups: {
+            //     node_modules: {
+            //         test: /[\\/]node_modules[\\/]/,
+            //         name(module, chunks, cacheGroupKey) {
+            //             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            //             return packageName
+            //         }
+            //     }
+            // }
+            // Custom Logic
+            chunks: 'all',
+            maxSize: 5000,
+            minSize: 1000,
+            cacheGroups: {
+                jquery: {
+                    test: /[\\/]node_modules[\\/]jquery[\\/]/,
+                    name: 'jquery',
+                },
+                bootstrap: {
+                    test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
+                    name: 'bootstrap',
+                },
+                lodash: {
+                    test: /[\\/]node_modules[\\/]lodash-es[\\/]/,
+                    name: 'lodash',
+                },
+                node_modules: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'node_modules',
+                }
+            }
+        }
     },
     module: {
         rules: [

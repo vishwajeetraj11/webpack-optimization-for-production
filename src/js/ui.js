@@ -22,7 +22,17 @@ const jssStyles = {
 
 const { classes } = jss.createStyleSheet(jssStyles).attach();
 
-export function renderTodos(todos) {
+export async function renderTodos(todos) {
+    const [{ Modal }, { default: $ }] = await Promise.all([
+        import(
+            'bootstrap'
+            /* webpackChunkName: "bootstrap" */
+        ),
+        import(
+            'jquery'
+            /* webpackChunkName: "jquery" */
+        )
+    ])
     const renderedItemArray = todos.map(function (todo) {
         const className = todo.completed ? 'completed' : ''
         const completionClass = todo.completed ? 'checked' : ''
