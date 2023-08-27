@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const config = {
     // if we don't specify the file inside a folder, webpack will assume its index.js
-    entry: path.resolve(__dirname, '../src/js/index.js'),
+    // entry: path.resolve(__dirname, '../src/js/index.js'),
     output: {
         path: path.resolve(__dirname, '../dist'),
         clean: true

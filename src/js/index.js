@@ -4,7 +4,12 @@ import { onLoadEventHandler, newTodoEventHandler, removeTodoEventHandler, toggle
 import '../style/vendors.scss'
 import '../style/index.scss'
 
+export function renderApp() {
+    onLoadEventHandler()
+}
+
 window.addEventListener('load', onLoadEventHandler)
+
 document.addEventListener('change', function (event) {
     if (event.target.classList.contains('new-todo')) {
         newTodoEventHandler(event)
@@ -19,4 +24,5 @@ document.addEventListener('click', function (event) {
         toggleTodoEventListener(event)
     }
 })
+
 
