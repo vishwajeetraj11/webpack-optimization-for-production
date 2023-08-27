@@ -119,11 +119,11 @@ module.exports = merge(common, {
             maxSize: Infinity,
             minSize: 2000,
             cacheGroups: {
-                jquery: {
-                    test: /[\\/]node_modules[\\/]jquery[\\/]/,
-                    name: 'jquery',
-                    priority: 2,
-                },
+                // jquery: {
+                //     test: /[\\/]node_modules[\\/]jquery[\\/]/,
+                //     name: 'jquery',
+                //     priority: 2,
+                // },
                 // bootstrap will be handled asynchronously
                 // bootstrap: {
                 //     test: /[\\/]node_modules[\\/]bootstrap[\\/]/,

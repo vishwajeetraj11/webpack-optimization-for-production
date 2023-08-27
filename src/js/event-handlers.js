@@ -21,13 +21,24 @@ export function newTodoEventHandler(event) {
     clearNewTodoInput()
 }
 
-export function removeTodoEventHandler(event) {
+export async function removeTodoEventHandler(event) {
     const id = getTodoId(event.target)
     removeTodo(id)
     renderTodos(getAllTodos())
-    import('bootstrap'/* webpackChunkName: "bootstrap" */).then(function ({ Modal }) {
-        console.log('modal loaded.')
-    })
+    // import('bootstrap'/* webpackChunkName: "bootstrap" */).then(function ({ Modal }) {
+    //     console.log('modal loaded.')
+    // })
+    const [{ Modal }, { default: $ }] = await Promise.all([
+        import(
+            'bootstrap'
+            /* webpackChunkName: "bootstrap" */
+        ),
+        import(
+            'jquery'
+            /* webpackChunkName: "jquery" */
+        )
+    ]);
+    console.log('loaded')
 }
 
 export function toggleTodoEventListener(event) {

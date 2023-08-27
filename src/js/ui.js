@@ -28,12 +28,12 @@ export async function renderTodos(todos) {
     //         'bootstrap'
     //         /* webpackChunkName: "bootstrap" */
     //     ),
-    const [{ default: $ }] = await Promise.all([
-        import(
-            'jquery'
-            /* webpackChunkName: "jquery" */
-        )
-    ])
+    // const [{ default: $ }] = await Promise.all([
+    //     import(
+    //         'jquery'
+    //         /* webpackChunkName: "jquery" */
+    //     )
+    // ])
     const renderedItemArray = todos.map(function (todo) {
         const className = todo.completed ? 'completed' : ''
         const completionClass = todo.completed ? 'checked' : ''
